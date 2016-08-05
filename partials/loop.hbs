@@ -3,22 +3,22 @@
     <div class="row">
         {{#foreach posts}}
             <article class="col-lg-4 col-sm-6 col-xs-12">
-                <div class="panel panel-default">
-                    <header class="panel-heading">
-                        <div class="img-wrapper">
+                <div class="card">
+                    <header class="card-heading">
+                        <a class="img-wrapper" href="{{url}}">
                             <img class="img-responsive" src="{{#if image}}{{ image }}{{else}}{{asset
                                     "assets/images/shop.png"}}{{/if}}"/>
-                        </div>
+                        </a>
                         <a href="{{url}}">{{title}}</a>
                     </header>
-                    <div class="panel-body">
+                    <div class="card-body">
                         <section class="post-excerpt">
                             <p>
-                                <small class="text-muted">{{excerpt characters="32"}}</small>
+                                <small class="text-muted">{{excerpt characters="60"}}</small>
                                 <a class="read-more" href="{{url}}">&raquo;</a></p>
                         </section>
                     </div>
-                    <footer class="post-meta panel-footer">
+                    <footer class="post-meta card-footer">
                         <span>&nbsp;</span>
                         {{tags}}
                         <time class="post-date pull-right"
@@ -33,11 +33,3 @@
     {{!-- Previous/next page links - displayed on every page --}}
     {{pagination}}
 </div>
-
-<style>
-    @media only screen and (min-width: 768px) {
-        .loop {
-            margin-top: -10rem;
-        }
-    }
-</style>
