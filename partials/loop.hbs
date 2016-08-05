@@ -1,5 +1,5 @@
 {{!-- This is the post loop - each post will be output using this markup --}}
-<div class="container">
+<div class="container loop">
     <div class="row">
         {{#foreach posts}}
             <article class="col-lg-4 col-sm-6 col-xs-12">
@@ -9,14 +9,12 @@
                             <img class="img-responsive" src="{{#if image}}{{ image }}{{else}}{{asset
                                     "assets/images/shop.png"}}{{/if}}"/>
                         </div>
-                        <header class="post-header">
-                            <h2 class="post-title"><a href="{{url}}">{{title}}</a></h2>
-                        </header>
+                        <a href="{{url}}">{{title}}</a>
                     </header>
-                    <div class="panel-body {{post_class}}">
+                    <div class="panel-body">
                         <section class="post-excerpt">
                             <p>
-                                {{excerpt characters="32"}}
+                                <small class="text-muted">{{excerpt characters="32"}}</small>
                                 <a class="read-more" href="{{url}}">&raquo;</a></p>
                         </section>
                     </div>
@@ -25,7 +23,7 @@
                         {{tags}}
                         <time class="post-date pull-right"
                               datetime="{{date format="YYYY-MM-DD"}}">{{date
-                                format="DD MMMM YYYY"}}</time>
+                                format="YYYY/MM/DD"}}</time>
                     </footer>
                 </div>
             </article>
@@ -35,3 +33,11 @@
     {{!-- Previous/next page links - displayed on every page --}}
     {{pagination}}
 </div>
+
+<style>
+    @media only screen and (min-width: 768px) {
+        .loop {
+            margin-top: -10rem;
+        }
+    }
+</style>

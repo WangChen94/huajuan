@@ -4,21 +4,23 @@
 {{!-- The big featured header --}}
 <header class="main-header {{#if
         @blog.cover}}" style="background-image: url({{@blog.cover}}){{else}}no-cover{{/if}}">
-    <nav class="main-nav">
+    <nav class="main-nav overlay clearfix">
         {{#if @blog.logo}}
             <a class="blog-logo" href="{{@blog.url}}">
                 <img src="{{@blog.logo}}" alt="{{@blog.title}}"/>
             </a>
         {{/if}}
     </nav>
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-5 text-left">
-                <h1 class="page-title">{{@blog.title}}</h1>
-                <h2 class="page-description">{{@blog.description}}</h2>
-            </div>
-            <div class="col-lg-7">
-                {{navigation}}
+    <div class="vertical">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <h1 class="page-title">{{@blog.title}}</h1>
+                    <h2 class="page-description">{{@blog.description}}</h2>
+                </div>
+                <div class="col-md-8">
+                    {{navigation}}
+                </div>
             </div>
         </div>
     </div>
@@ -31,3 +33,12 @@
     {{> "loop"}}
 
 </main>
+
+<style>
+    .site-footer{
+        display: none;
+    }
+    body{
+        background:#f5c538
+    }
+</style>
