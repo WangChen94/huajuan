@@ -246,6 +246,7 @@ h6 {
 a {
     color: #4A4A4A;
     transition: color 0.3s ease;
+    cursor: pointer;
 }
 
 a:hover {
@@ -599,164 +600,6 @@ body.nav-opened .site-wrapper {
 .main-nav a {
     text-decoration: none;
     font-family: 'Open Sans', sans-serif;
-}
-
-/* Navigation */
-body.nav-opened .nav-cover {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 240px;
-    bottom: 0;
-    z-index: 200;
-}
-
-.nav {
-    position: fixed;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    z-index: 5;
-    width: 240px;
-    opacity: 0;
-    background: #111;
-    margin-bottom: 0;
-    text-align: left;
-    overflow-y: auto;
-    -webkit-transition: -webkit-transform 0.5s ease,
-                        opacity 0.3s ease 0.7s;
-            transition: transform 0.5s ease,
-                        opacity 0.3s ease 0.7s;
-}
-
-body.nav-closed .nav {
-    -webkit-transform: translate3D(97px, 0, 0);
-        -ms-transform: translate3D(97px, 0, 0);
-            transform: translate3D(97px, 0, 0);
-}
-
-body.nav-opened .nav {
-    opacity: 1;
-    -webkit-transition: -webkit-transform 0.3s ease,
-                        opacity 0s ease 0s;
-            transition: transform 0.3s ease,
-                        opacity 0s ease 0s;
-    -webkit-transform: translate3D(0, 0, 0);
-        -ms-transform: translate3D(0, 0, 0);
-            transform: translate3D(0, 0, 0);
-}
-
-.nav-title {
-    position: absolute;
-    top: 45px;
-    left: 30px;
-    font-size: 16px;
-    font-weight: 100;
-    text-transform: uppercase;
-    color: #fff;
-}
-
-.nav-close {
-    position: absolute;
-    top: 38px;
-    right: 25px;
-    width: 20px;
-    height: 20px;
-    padding: 0;
-    font-size: 10px;
-}
-
-.nav-close:focus {
-    outline: 0;
-}
-
-.nav-close:before,
-.nav-close:after {
-    content: '';
-    position: absolute;
-    top: 0;
-    width: 20px;
-    height: 1px;
-    background: rgb(150,150,150);
-    top: 15px;
-    -webkit-transition: background 0.15s ease;
-            transition: background 0.15s ease;
-}
-
-.nav-close:before {
-    -webkit-transform: rotate(45deg);
-        -ms-transform: rotate(45deg);
-            transform: rotate(45deg);
-}
-
-.nav-close:after {
-    -webkit-transform: rotate(-45deg);
-        -ms-transform: rotate(-45deg);
-            transform: rotate(-45deg);
-}
-
-.nav-close:hover:before,
-.nav-close:hover:after {
-    background: rgb(255,255,255);
-}
-
-.nav ul {
-    padding: 90px 9% 5%;
-    list-style: none;
-    counter-reset: item;
-}
-
-.nav li:before {
-    display: block;
-    float: right;
-    padding-right: 4%;
-    padding-left: 5px;
-    text-align: right;
-    font-size: 1.2rem;
-    vertical-align: bottom;
-    color: #B8B8B8;
-    content: counter(item, lower-roman);
-    counter-increment: item;
-}
-.nav li {
-    margin: 0;
-}
-.nav li a {
-    text-decoration: none;
-    line-height: 1.4;
-    font-size: 1.4rem;
-    display: block;
-    padding: 0.6rem 4%;
-    overflow: hidden;
-    white-space: nowrap;
-    text-overflow: ellipsis;
-}
-.nav li a:after {
-    display: inline-block;
-    content: " .......................................................";
-    color: rgba(255,255,255,0.2);
-    margin-left: 5px;
-}
-.nav .nav-current:before {
-    color: #fff;
-}
-.nav .nav-current a:after {
-    content: " ";
-    border-bottom: rgba(255,255,255,0.5) 1px solid;
-    width: 100%;
-    height: 1px;
-}
-
-.nav a:link,
-.nav a:visited {
-    color: #B8B8B8;
-}
-
-.nav li.nav-current a,
-.nav a:hover,
-.nav a:active,
-.nav a:focus {
-    color: #fff;
 }
 
 .subscribe-button {
@@ -1227,11 +1070,6 @@ body:not(.post-template) .post-title {
     color: #111;
 }
 
-/* Create some space to the right for the share links */
-.post-footer .author {
-    margin-right: 180px;
-}
-
 .post-footer h4 a {
     color: #2e2e2e;
     text-decoration: none;
@@ -1330,10 +1168,6 @@ body:not(.post-template) .post-title {
     -moz-box-sizing: border-box;
     box-sizing: border-box;
     display: block;
-    position: absolute;
-    top: -40px;
-    left: 50%;
-    margin-left: -40px;
     width: 80px;
     height: 80px;
     border-radius: 100%;
@@ -1342,6 +1176,7 @@ body:not(.post-template) .post-title {
     background: #fff;
     z-index: 2;
     box-shadow: #E7EEF2 0 0 0 1px;
+    margin: 1rem auto;
 }
 
 .author-image .img {
@@ -1417,7 +1252,7 @@ body:not(.post-template) .post-title {
     -webkit-align-items: stretch;
     -ms-flex-align: stretch;
     align-items: stretch;
-    margin-top: 10rem;
+    margin-top: 8rem;
 }
 
 .read-next-story {
@@ -1461,23 +1296,19 @@ body:not(.post-template) .post-title {
 }
 
 .read-next-story .post {
-    padding-top: 6rem;
-    padding-bottom: 6rem;
+    padding-top: 4rem;
+    padding-bottom: 4rem;
 }
 
 .read-next-story .post:before {
-    content: "Read This Next";
+    content: "下一篇";
     padding: 4px 10px 5px;
-    text-transform: uppercase;
     font-size: 1.1rem;
-    font-family: "Open Sans", sans-serif;
-    color: rgba(255,255,255,0.8);
-    border: rgba(255,255,255,0.5) 1px solid;
-    border-radius: 4px;
+    color: #f5c538;
     transition: all 0.5s ease;
 }
 .read-next-story.prev .post:before {
-    content: "You Might Enjoy";
+    content: "推荐阅读";
 }
 
 .read-next-story h2 {
@@ -1550,93 +1381,6 @@ body:not(.post-template) .post-title {
 .content .embedPastebin {
     margin-bottom: 1.75em;
 }
-
-
-/* ==========================================================================
-   9. Pagination - Tools to let you flick between pages
-   ========================================================================== */
-
-/* The main wrapper for our pagination links */
-.pagination {
-    position: relative;
-    width: 80%;
-    max-width: 710px;
-    margin: 4rem auto;
-    font-family: "Open Sans", sans-serif;
-    font-size: 1.3rem;
-    color: #9EABB3;
-    text-align: center;
-}
-
-.pagination a {
-    color: #9EABB3;
-    transition: all 0.2s ease;
-}
-
-/* Push the previous/next links out to the left/right */
-.older-posts,
-.newer-posts {
-    position: absolute;
-    display: inline-block;
-    padding: 0 15px;
-    border: #bfc8cd 1px solid;
-    text-decoration: none;
-    border-radius: 4px;
-    transition: border 0.3s ease;
-}
-
-.older-posts {
-    right: 0;
-}
-
-.page-number {
-    display: inline-block;
-    padding: 2px 0;
-    min-width: 100px;
-}
-
-.newer-posts {
-    left: 0;
-}
-
-.older-posts:hover,
-.newer-posts:hover {
-    color: #889093;
-    border-color: #98a0a4;
-}
-
-.extra-pagination {
-    display: none;
-    border-bottom: #EBF2F6 1px solid;
-}
-.extra-pagination:after {
-    display: block;
-    content: "";
-    width: 7px;
-    height: 7px;
-    border: #E7EEF2 1px solid;
-    position: absolute;
-    bottom: -5px;
-    left: 50%;
-    margin-left: -5px;
-    background: #FFF;
-    border-radius: 100%;
-    box-shadow: #FFF 0 0 0 5px;
-}
-.extra-pagination .pagination {
-    width: auto;
-}
-
-/* On page2+ make all the headers smaller */
-.archive-template .main-header {
-    max-height: 30vh;
-}
-
-/* On page2+ show extra pagination controls at the top of post list */
-.archive-template .extra-pagination {
-    display: block;
-}
-
 
 /* ==========================================================================
    10. Subscribe - Generate those email subscribers
@@ -1952,20 +1696,6 @@ body:not(.post-template) .post-title {
         border-color: transparent;
     }
 
-    .nav-title {
-        top: 25px;
-
-    }
-
-    .nav-close {
-        position: absolute;
-        top: 18px;
-    }
-
-    .nav ul {
-        padding: 60px 9% 5%;
-    }
-
     .inner,
     .pagination {
         width: auto;
@@ -2224,3 +1954,26 @@ body:not(.post-template) .post-title {
    End of file. Animations should be the last thing here. Do not add stuff
    below this point, or it will probably fuck everything up.
    ========================================================================== */
+
+/* ==========================================================================
+   卡片效果
+   ========================================================================== */
+
+.img-wrapper{
+    height: 12rem;
+    overflow: hidden;
+}
+.img-wrapper img{
+    transition: all 100ms linear;
+}
+.img-wrapper:hover img{
+    transform: scale(1.1);
+}
+.panel-heading{
+    height: 22rem;
+    overflow: hidden;
+}
+.panel-body{
+    height: 12rem;
+    overflow: hidden;
+}

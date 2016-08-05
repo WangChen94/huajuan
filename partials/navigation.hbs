@@ -1,7 +1,7 @@
-<ul>
+<ul class="nav nav-pills">
     {{#foreach navigation}}
-        <li>
-            <a class="label label-default" href="{{url absolute="true"}}">{{label}}</a>
+        <li role="presentation">
+            <a href="{{url absolute="true"}}">{{label}}</a>
         </li>
     {{/foreach}}
 </ul>

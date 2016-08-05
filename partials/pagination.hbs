@@ -1,0 +1,13 @@
+<nav role="navigation">
+    <div class="text-center">
+        <small class="text-muted">第 {{page}} 页 / 共 {{pages}} 页</small>
+    </div>
+    <div>
+        {{#if next}}
+            <a class="btn btn-default" href="{{page_url next}}">&larr; 上一页</a>
+        {{/if}}
+        {{#if prev}}
+            <a class="btn btn-default pull-right" href="{{page_url prev}}">下一页 &rarr;</a>
+        {{/if}}
+    </div>
+</nav>
