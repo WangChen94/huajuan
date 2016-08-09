@@ -24,9 +24,9 @@ https://github.com/cloudinsight/huajuan/archive/v2.0.1.zip
 
 ## 参考文档
 
-**寻找主题灵感** http://marketplace.ghost.org/
+寻找主题灵感 http://marketplace.ghost.org/
 
-**Ghost 主题开发的文档** http://themes.ghost.org/
+Ghost 主题开发的文档 http://themes.ghost.org/
 
 ## 开源协议
 
