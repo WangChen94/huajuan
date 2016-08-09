@@ -1,15 +1,7 @@
-<nav role="navigation">
+<div class="row" data-next="{{page_url next}}" style="margin-bottom: 40px;">
     <div class="text-center">
-        {{#if next}}
-            <div class="pull-left">
-                <a class="text-muted" href="{{page_url next}}">&larr;</a>
-            </div>
-        {{/if}}
-        {{#if prev}}
-            <div class="pull-right">
-                <a class="text-muted" href="{{page_url prev}}">&rarr;</a>
-            </div>
-        {{/if}}
-        <small class="text-muted">第 {{page}} 页 / 共 {{pages}} 页</small>
+        <button class="loadmore" data-pages="{{pages}}">
+            更多文章
+        </button>
     </div>
-</nav>
+</div>

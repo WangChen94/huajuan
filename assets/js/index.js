@@ -53,4 +53,26 @@
         });
 
     };
+
+    // 获取下一页的链接
+    var nextPageUrl = $('[data-next]').data('next');
+
+    if (nextPageUrl.length === 0) {
+        $('.loadmore').fadeOut();
+    }
+
+    $('.loadmore').click(function () {
+        $.get(nextPageUrl, function (html) {
+            // 把下一页的文章插入到加载更过的前面
+            $(html).find('.loop article').insertBefore('.loadmore');
+
+            // 获得新的下一页的链接
+            nextPageUrl = $(html).find('[data-next]').data('next');
+            if (nextPageUrl.length === 0) {
+                $('.loadmore').fadeOut();
+            }
+        });
+        return false;
+    });
+
 })(jQuery);
