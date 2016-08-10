@@ -57,7 +57,7 @@
     // 获取下一页的链接
     var nextPageUrl = $('[data-next]').data('next');
 
-    if (nextPageUrl && nextPageUrl.length === 0) {
+    if (!nextPageUrl || nextPageUrl.length === 0) {
         $('.loadmore').fadeOut();
     }
 
