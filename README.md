@@ -8,7 +8,7 @@
 
 下载最新的主题压缩包：
 
-https://github.com/cloudinsight/huajuan/archive/v2.0.1.zip
+https://github.com/cloudinsight/huajuan/releases/latest
 
 解压到 `themes` 目录下（一般在 `/var/lib/ghost/themes`），然后在 Ghost 的网站设置里选用新的主题。
 
